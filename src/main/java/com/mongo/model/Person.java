@@ -3,6 +3,8 @@ package com.mongo.model;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.util.List;
+
 /**
  * Created by ashu936 on 9/7/2015.
  */
@@ -17,6 +19,8 @@ public class Person {
     private String lastName;
     @Field("dob")
     private String dob;
+    @Field("address")
+    private List<Address> addressList;
 
     public String getId() {
         return id;
@@ -48,5 +52,13 @@ public class Person {
 
     public void setDob(String dob) {
         this.dob = dob;
+    }
+
+    public List<Address> getAddressList() {
+        return addressList;
+    }
+
+    public void setAddressList(List<Address> addressList) {
+        this.addressList = addressList;
     }
 }
